@@ -1,0 +1,43 @@
+﻿
+@model IEnumerable<WebApplication_ChainStores.Models.Stores>
+
+@{
+    ViewBag.Title = "ListStore";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Магазины</h2>
+
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Street)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Building)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Street)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Building)
+            </td>
+            <td>
+                @Html.ActionLink("Сделать заказ", "AddNewOrder", new { id = item.StoreID }, htmlAttributes: new { @class = "btn btn-info active", role = "button" })
+            </td>
+        </tr>
+    }
+
+</table>

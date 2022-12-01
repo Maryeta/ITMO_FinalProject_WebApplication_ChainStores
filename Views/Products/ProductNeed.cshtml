@@ -1,0 +1,40 @@
+﻿@model IEnumerable<WebApplication_ChainStores.Models.ProductAvailability_Stores>
+
+@{
+    ViewBag.Title = "ProductNeed";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Необходимо пополнить товары</h2>
+<div>
+    <table class="table table-hover">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                <p>Магазин</p>
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr class="danger">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Stores.Street)
+                </td>
+
+            </tr>
+        }
+    </table>
+</div>
+

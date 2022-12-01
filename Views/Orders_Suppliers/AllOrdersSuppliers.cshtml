@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WebApplication_ChainStores.Models.Orders_Suppliers>
+
+@{
+    ViewBag.Title = "AllOrdersSuppliers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Заказы поставщикам</h2>
+
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employees.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Suppliers.SupplierName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employees.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Suppliers.SupplierName)
+        </td>
+        <td>
+            @Html.ActionLink("Детализация", "DetailOrderSupplier", new { id=item.OrderSupplierID }, htmlAttributes: new { @class = "btn btn-default active", role = "button" })
+
+        </td>
+    </tr>
+}
+
+</table>

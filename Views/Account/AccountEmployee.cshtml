@@ -1,0 +1,32 @@
+﻿@model WebApplication_ChainStores.Models.Employees
+
+@{
+    ViewBag.Title = "AccountEmployee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Аккаунт</h2>
+<table class="table">
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.FirstName)</td>
+        <td>@Html.DisplayFor(m => m.FirstName)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.LastName)</td>
+        <td>@Html.DisplayFor(m => m.LastName)</td>
+        </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.Post)</td>
+        <td>@Html.DisplayFor(m => m.Post)</td>
+        </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.PhoneNumber)</td>
+        <td>@Html.DisplayFor(m => m.PhoneNumber)</td>
+        </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.Email)</td>
+        <td>@Html.DisplayFor(m => m.Email)</td>
+    </tr>
+
+</table>
+

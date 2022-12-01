@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - ProductPRO</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("ProductPRO", "Index", "Account", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Товары <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Все товары", "Index", "Products")</li>
+                            <li role="separator" class="divider"></li>
+                            <li>@Html.ActionLink("Добавить товар", "Create", "Products")</li>
+                            <li role="separator" class="divider"></li>
+                            <li>@Html.ActionLink("Необходимо пополнить", "ProductNeed", "Products")</li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Магазины <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Товар в наличии", "Index", "Stores")</li>
+                            <li role="separator" class="divider"></li>
+                            <li>@Html.ActionLink("Добавить новый товар", "Index", "ProductAvailability_Stores")</li>
+                            <li role="separator" class="divider"></li>
+                            <li>@Html.ActionLink("Оформить заказ", "ListStore", "Orders_Stores")</li>
+                            <li role="separator" class="divider"></li>
+                            <li>@Html.ActionLink("Посмотреть заказы", "ListStoreReady", "Orders_Stores")</li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Поставщики <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Список поставщиков", "Index", "Suppliers")</li>
+                            <li role="separator" class="divider"></li>
+                            <li>@Html.ActionLink("Новый поставщик", "Create", "Suppliers")</li>
+                            <li role="separator" class="divider"></li>
+                            <li>@Html.ActionLink("Товары к заказу", "SumOrderStores", "Orders_Suppliers")</li>
+                            <li role="separator" class="divider"></li>
+                            <li>@Html.ActionLink("Оформить заказ", "ListSupplier", "Orders_Suppliers")</li>
+                            <li role="separator" class="divider"></li>
+                            <li>@Html.ActionLink("Посмотреть заказы", "AllOrdersSuppliers", "Orders_Suppliers")</li>
+
+                        </ul>
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - ProductPRO</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/scripts/jquery-1.10.2.js")
+    @Scripts.Render("~/scripts/jquery.unobtrusive-ajax.js")
+</body>
+</html>

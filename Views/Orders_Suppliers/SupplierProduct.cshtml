@@ -1,0 +1,21 @@
+﻿@model WebApplication_ChainStores.Models.Product
+
+@{
+    ViewBag.Title = "SupplierProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Поставщики</h2>
+<table class="table table-hover">
+    <tr>
+        </tr>
+        @foreach (var model in Model.ProductAvailability_Suppliers)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelitem => model.Suppliers.SupplierName)
+            </td>
+        </tr>
+    }
+    </table>
+

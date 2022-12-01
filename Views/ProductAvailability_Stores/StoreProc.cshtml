@@ -1,0 +1,24 @@
+﻿@model IEnumerable<WebApplication_ChainStores.Models.orderChainStores_Result>
+@{
+    ViewBag.Title = "StoreProc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>StoreProc</h2>
+<table class="table table-bordered">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SumQuantity)
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<WebApplication_ChainStores.Models.orderChainStores_Result>
+@{
+    ViewBag.Title = "SumOrderStoresView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Общий заказ сети</h2>
+
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SumQuantity)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SumQuantity)
+            </td>
+            <td>
+                @Html.ActionLink("Поставщики", "SupplierProduct", new { id = item.ProductID }, htmlAttributes: new { @class = "btn btn-default active", role = "button" })
+            </td>
+        </tr>
+    }
+
+</table>

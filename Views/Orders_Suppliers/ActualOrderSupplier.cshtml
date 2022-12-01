@@ -1,0 +1,41 @@
+﻿@model WebApplication_ChainStores.Models.Orders_Suppliers
+
+@{
+    ViewBag.Title = "ActualOrderSupplier";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Номер заказа @ViewBag.OrderSupID</h2>
+
+<table class="table">
+    <tr>
+        <td>
+            Название товара
+        </td>
+        <td>
+            Цена закупки
+        </td>
+        <td>
+            Количество
+        </td>
+        <td></td>
+    </tr>
+    @foreach (var product in Model.Orders_Details_Suppliers)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => product.Product.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => product.Product.PurchasePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => product.Quantity)
+            </td>
+        </tr>
+    }
+</table>
+<div>
+    @Html.ActionLink("Назад", "AddProductInOrderSupplier", new { id1 = Model.OrderSupplierID, id2 = Model.SupplierID }, htmlAttributes: new { @class = "btn btn-default active", role = "button" })
+</div>
+

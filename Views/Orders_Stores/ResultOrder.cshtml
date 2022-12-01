@@ -1,0 +1,34 @@
+﻿@model WebApplication_ChainStores.Models.Orders_Stores
+@{
+    ViewBag.Title = "ResultOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Заказ оформлен</h2>
+<h3>Номер заказа @Model.OrderStoreID</h3>
+
+<table class="table table-hover">
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.Orders_Details_Store.FirstOrDefault().Product.ProductName)
+        </td>
+        <td>
+            @Html.DisplayNameFor(modelItem => Model.Orders_Details_Store.FirstOrDefault().Quantity)
+        </td>
+    </tr>
+    @foreach (var product in Model.Orders_Details_Store)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => product.Product.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => product.Quantity)
+            </td>
+        </tr>
+    }
+</table>
+<div>
+    @Html.ActionLink("Назад", "ListStore", new { id = Model.OrderStoreID }, htmlAttributes: new { @class = "btn btn-default active", role = "button" })
+</div>
+

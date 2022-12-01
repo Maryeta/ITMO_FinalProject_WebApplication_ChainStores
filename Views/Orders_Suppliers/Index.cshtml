@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebApplication_ChainStores.Models.Orders_Suppliers>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employees.Post)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Suppliers.SupplierName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employees.Post)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Suppliers.SupplierName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OrderSupplierID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OrderSupplierID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OrderSupplierID })
+        </td>
+    </tr>
+}
+
+</table>

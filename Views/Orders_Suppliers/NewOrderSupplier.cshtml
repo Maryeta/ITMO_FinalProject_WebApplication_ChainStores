@@ -1,0 +1,17 @@
+﻿@model WebApplication_ChainStores.Models.Orders_Suppliers
+
+@{
+    ViewBag.Title = "NewOrderSupplier";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Новый заказ</h2>
+<hr />
+<h5>Номер: @Model.OrderSupplierID</h5>
+<h5>Дата: @Model.Date</h5>
+<h5>Фамилия сотрудника: @ViewBag.EmployeeLastName</h5>
+<hr />
+<div>
+    @Html.ActionLink("Добавить товар", "AddProductInOrderSupplier", new { id1 = Model.OrderSupplierID, id2 = ViewBag.SupplierID }, htmlAttributes: new { @class = "btn btn-default active", role = "button" })
+</div>

@@ -1,0 +1,30 @@
+﻿@model WebApplication_ChainStores.Models.Orders_Stores
+
+@{
+    ViewBag.Title = "SumOrderStores";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Введите дату заказа</h4>
+    <hr />
+    <div class="form-group">
+        <label for="date" class="control-label col-md-2">Дата: </label>
+        <div class="col-md-10">
+            <input type="date" id="date" name="date" />
+        </div>
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Перейти" class="btn btn-inf0" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+
+</div>

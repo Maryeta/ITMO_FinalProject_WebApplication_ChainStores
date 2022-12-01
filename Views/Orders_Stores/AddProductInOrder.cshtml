@@ -1,0 +1,67 @@
+﻿@model IEnumerable <WebApplication_ChainStores.Models.Product>
+
+@{
+    ViewBag.Title = "AddProductInOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Добавить товар в заказ</h2>
+<h4>Номер заказа @ViewBag.OrderStoreID</h4>
+
+<div>
+    @Html.ActionLink("Посмотреть заказ", "ActualOrderStore", new {id = @ViewBag.OrderStoreID }, htmlAttributes: new { @class = "btn btn-default active", role = "button" })
+    @Html.ActionLink("Завершить заказ", "ResultOrder", new { id = @ViewBag.OrderStoreID }, htmlAttributes: new { @class = "btn btn-default active", role = "button" })
+</div>
+
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PurchasePrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalePrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Place)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductAvailability_Suppliers.FirstOrDefault().Suppliers.SupplierName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchasePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Place)
+            </td>
+            <td>
+                <ul>
+                    @foreach (var p in item.ProductAvailability_Suppliers)
+                    {
+                        <li>@Html.DisplayFor(mod => p.Suppliers.SupplierName)</li>
+                    }
+                </ul>
+            </td>
+            <td>
+                @Html.ActionLink("Добавить", "AddThisProduct", new { id1 = item.ProductID, id2 = ViewBag.OrderStoreID }, htmlAttributes: new { @class = "btn btn-info active", role = "button" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+

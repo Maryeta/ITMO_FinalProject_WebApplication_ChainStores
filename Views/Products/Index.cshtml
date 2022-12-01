@@ -1,0 +1,80 @@
+﻿@model IEnumerable<WebApplication_ChainStores.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Все товары</h2>
+
+<div>
+
+    @using (Ajax.BeginForm("ProductSearch", new AjaxOptions { UpdateTargetId = "results" }))
+    {
+        <input type="text" name="Name" />
+        <input type="submit" value="Поиск" />
+    }
+</div>
+    <div id="results">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PurchasePrice)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SalePrice)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Place)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductAvailability_Suppliers.FirstOrDefault().Suppliers.SupplierName)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            @foreach (var item in Model)
+            {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchasePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Place)
+            </td>
+            <td>
+                <ul>
+                    @foreach (var p in item.ProductAvailability_Suppliers)
+                    {
+                        <li>@Html.DisplayFor(mod => p.Suppliers.SupplierName)</li>
+                    }
+                </ul>
+            </td>
+            <td>
+                @Html.ActionLink("Характеристики", "Details", new { id = item.ProductID }, htmlAttributes: new { @class = "btn btn-info btn-sm active", role = "button" })
+                @Html.ActionLink("Удалить", "Delete", new { id = item.ProductID }, htmlAttributes: new { @class = "btn btn-default btn-sm active", role = "button" })
+                @Html.ActionLink("Изменить", "Edit", new { id = item.ProductID }, htmlAttributes: new { @class = "btn btn-default btn-sm active", role = "button" })
+            </td>
+        </tr>
+            }
+
+        </table>
+
+</div>

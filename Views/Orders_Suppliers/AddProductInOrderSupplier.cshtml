@@ -1,0 +1,50 @@
+﻿@model IEnumerable <WebApplication_ChainStores.Models.productSupplier_Result>
+
+@{
+    ViewBag.Title = "AddProductInOrderSupplier";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Добавить товар</h2>
+
+<div>
+    @Html.ActionLink("Посмотреть заказ", "ActualOrderSupplier", new { id = ViewBag.OrderSupplierID }, htmlAttributes: new { @class = "btn btn-default active", role = "button" })
+    @Html.ActionLink("Завершить заказ", "ListSupplier", null, htmlAttributes: new { @class = "btn btn-default active", role = "button" })
+</div>
+
+<table class="table table-hover">
+    <tr>
+        <th>
+            ID товара
+        </th>
+        <th>
+            Название товара
+        </th>
+        <th>
+            Цена закупки
+        </th>
+        <th>
+            Количество
+        </th>
+        @foreach (var item in Model)
+        {
+<tr>
+            <td>
+                @Html.DisplayFor(modelitem => item.ProductID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.PurchasePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Quantity)
+            </td>
+            <td>
+                @Html.ActionLink("Добавить", "AddSelectProductOrdSup", new { id1 = item.ProductID, id2 = ViewBag.OrderSupplierID }, htmlAttributes: new { @class = "btn btn-info active", role = "button" })
+            </td>
+        </tr>
+    }
+
+    </table>

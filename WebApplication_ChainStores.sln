@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication_ChainStores", "WebApplication_ChainStores.csproj", "{6851BF37-AAA8-444B-A039-B27540918E60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6851BF37-AAA8-444B-A039-B27540918E60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6851BF37-AAA8-444B-A039-B27540918E60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6851BF37-AAA8-444B-A039-B27540918E60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6851BF37-AAA8-444B-A039-B27540918E60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {806886F4-C53B-463D-BB92-C796C56650C7}
+	EndGlobalSection
+EndGlobal

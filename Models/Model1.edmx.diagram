@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d3f91d705c634d888e8adca57c15292c" Name="Diagram1">
+        <EntityTypeShape EntityType="ChainStoresModel.Employees" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChainStoresModel.Orders_Details_Store" Width="1.5" PointX="7.5" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChainStoresModel.Orders_Details_Suppliers" Width="1.5" PointX="10.5" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChainStoresModel.Orders_Stores" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChainStoresModel.Orders_Suppliers" Width="1.5" PointX="8.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChainStoresModel.Product" Width="1.5" PointX="3.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChainStoresModel.ProductAvailability_Stores" Width="1.5" PointX="6" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChainStoresModel.ProductAvailability_Suppliers" Width="1.5" PointX="8.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChainStoresModel.Registration" Width="1.5" PointX="5.25" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChainStoresModel.Roles" Width="1.5" PointX="5.25" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChainStoresModel.Stores" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChainStoresModel.Suppliers" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChainStoresModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <AssociationConnector Association="ChainStoresModel.FK__Employees__Store__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="ChainStoresModel.FK__Orders_St__Emplo__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="ChainStoresModel.FK__Orders_Su__Emplo__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="ChainStoresModel.FK__Registrat__Emplo__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="ChainStoresModel.FK__Orders_De__Order__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="ChainStoresModel.FK__Orders_De__Produ__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="ChainStoresModel.FK__Orders_De__Order__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="ChainStoresModel.FK__Orders_De__Produ__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="ChainStoresModel.FK__Orders_St__Store__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="ChainStoresModel.FK__Orders_Su__Suppl__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="ChainStoresModel.FK__ProductAv__Produ__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="ChainStoresModel.FK__ProductAv__Produ__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="ChainStoresModel.FK__ProductAv__Store__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="ChainStoresModel.FK__ProductAv__Suppl__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="ChainStoresModel.Registration_Roles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

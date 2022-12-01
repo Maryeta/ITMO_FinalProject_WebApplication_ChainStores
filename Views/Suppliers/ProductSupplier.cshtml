@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebApplication_ChainStores.Models.ProductAvailability_Suppliers>
+
+@{
+    ViewBag.Title = "ProductSupplier";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Товары поставляемые</h2>
+<h2>@ViewBag.SupplierName</h2>
+
+<p>
+    @Html.ActionLink("Добавить товар для поставки", "AddProductSupplier", new { id = ViewBag.SupplierID}, htmlAttributes: new { @class = "btn btn-info active", role = "button" })
+</p>
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Suppliers.SupplierName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Suppliers.SupplierName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Product.ProductName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Quantity)
+    </td>
+</tr>
+}
+
+</table>
+<div>
+    @Html.ActionLink("К списку поставщиков", "Index", null, htmlAttributes: new { @class = "btn btn-default active", role = "button" })
+</div>
